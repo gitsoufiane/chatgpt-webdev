@@ -21,16 +21,7 @@ async function sendChat() {
         messages
     }
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions',{ 
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${OPENAI_KEY}`
 
-        },
-        body: JSON.stringify(data)
-    })
-    const json = await response.json()
     const message = json.choices[0].message
     messages.push(message)
 
